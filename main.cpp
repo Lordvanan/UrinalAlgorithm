@@ -13,7 +13,7 @@ struct Urinal
 
 Urinal* GetUrinalConfig(int& count);
 void GetUrinalRec(int count, std::string config, Urinal* urinals);
-void WeightUrinalValue(Urinal* urinals, int count);
+void WeighUrinalValue(Urinal* urinals, int count);
 int FindMostDesireableUrinal(Urinal* urinals, int count);
 void DisplayResult(Urinal* urinals, int count, int best);
 void PresentResultsText(Urinal* urinals, int count);
@@ -22,7 +22,7 @@ int main()
 {
 	int count;
 	Urinal* urinals = GetUrinalConfig(count);
-	WeightUrinalValue(urinals, count);
+	WeighUrinalValue(urinals, count);
 	int best = FindMostDesireableUrinal(urinals, count);
 	PresentResultsText(urinals, count);
 	std::cout << "Result: ";
@@ -68,7 +68,7 @@ void GetUrinalRec(int count, std::string config, Urinal* urinals)
 		urinals[count].left = &urinals[count - 1];
 }
 
-void WeightUrinalValue(Urinal* urinals, int count)
+void WeighUrinalValue(Urinal* urinals, int count)
 {
 	Urinal* trav = nullptr;
 	for (int i = 0; i < count; i++)
